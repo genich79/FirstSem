@@ -3,7 +3,7 @@
 //        3. Найти все кратные n числа в диапазоне от i до Short.MAX_VALUE сохранить в массив m1
 //        4. Найти все некратные n числа в диапазоне от Short.MIN_VALUE до i и сохранить в массив m2
 //
-//        Пункты реализовать в методе main
+//        Пункты реализовать в ме
 
 import java.util.Arrays;
 import java.util.Random;
@@ -23,21 +23,28 @@ public class Main {
         int n = (Integer.toBinaryString(i).length());
         System.out.println("Номер старшего значащего бита n: " + n);
 
-        int[] arr = IntStream.rangeClosed(i, Short.MAX_VALUE).toArray();
+        //int[] arr = IntStream.rangeClosed(i, Short.MAX_VALUE).toArray();
 //        System.out.print(Arrays.toString(arr));
 //
-        int j;
-        for (j = i; j <= arr.length; j++) {
-            if (arr[j] % n == 0) {
+        //int j;
+        //for (j = i; j <= arr.length; j++) {
+        //if (arr[j] % n == 0) {
 
-                System.out.print(Arrays.toString(new int[]{arr[j]}) + ", ");
+        //System.out.print(Arrays.toString(new int[]{arr[j]}) + ", ");
 
-//        for (m = i; m <= Short.MAX_VALUE ; m++) ;
-//        if (m % n == 0) ;
-//        int[] array = new int[0];
-//        array[m] = i++;
-//        System.out.print(Arrays.toString(array));
-            }
+
+        int[] array = new int[Short.MAX_VALUE - i + 1];
+        for (int j = 0; j < array.length; j++)
+            if (array[j] == 0)
+                array[j] = i++;
+        System.out.print(Arrays.toString(array));
+
+//        int[] result = new int[array.length];
+//        for (int j = 0; j <= array.length - 1; j++) {
+//            if (array[j] % n == 0) ;
+//                result[j] = array[j];
+//        System.out.print(Arrays.toString(result));
         }
     }
-}
+
+
