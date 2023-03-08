@@ -7,7 +7,6 @@
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 public class Main {
 
@@ -22,29 +21,27 @@ public class Main {
         // Посчитать и сохранить в n номер старшего значащего бита выпавшего числа
         int n = (Integer.toBinaryString(i).length());
         System.out.println("Номер старшего значащего бита n: " + n);
-
-        //int[] arr = IntStream.rangeClosed(i, Short.MAX_VALUE).toArray();
+    }
+    //int[] arr = IntStream.rangeClosed(i, Short.MAX_VALUE).toArray();
 //        System.out.print(Arrays.toString(arr));
 //
-        //int j;
-        //for (j = i; j <= arr.length; j++) {
-        //if (arr[j] % n == 0) {
+    //int j;
+    //for (j = i; j <= arr.length; j++) {
+    //if (arr[j] % n == 0) {
 
-        //System.out.print(Arrays.toString(new int[]{arr[j]}) + ", ");
+    //System.out.print(Arrays.toString(new int[]{arr[j]}) + ", ");
 
 
-        int[] array = new int[Short.MAX_VALUE - i + 1];
-        for (int j = 0; j < array.length; j++)
-            if (array[j] == 0)
-                array[j] = i++;
-        System.out.print(Arrays.toString(array));
+    public static void ReleaseArray(int i, int n) {
+        for (int j = i; j < Short.MAX_VALUE; j++)
+            if (j % n == 0)
+                j += 1;
 
-//        int[] result = new int[array.length];
-//        for (int j = 0; j <= array.length - 1; j++) {
-//            if (array[j] % n == 0) ;
-//                result[j] = array[j];
-//        System.out.print(Arrays.toString(result));
-        }
+
+        int[] m1 = new int[i];
+        for (int j = 0; j <= m1.length; j++)
+            m1[j] = i++;
+
+        System.out.print(Arrays.toString(m1));
     }
-
-
+}
